@@ -1,0 +1,20 @@
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+import java.util.TimeZone;
+import java.util.Date;
+
+	public class Time {
+		public static void main(String[] args) {
+			Scanner scan = new Scanner(System.in);
+			System.out.println("Enter you time:");
+			String w = "GMT"+scan.nextLine();
+			System.out.println("Time in Kiev:");
+			SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MMMyyyy \n  HH:mm 'GMT'Z \n  K:m a ");
+	        System.out.println("date: " + dateFormat.format( new Date() ) );
+	        SimpleDateFormat dateFormat1 = new SimpleDateFormat("MM/dd/yyyy \n  HH:mm 'GMT'Z \n  K:m a ");
+	        dateFormat1.setTimeZone(TimeZone.getTimeZone(w));
+	        System.out.println("date: " + dateFormat1.format( new Date() ) );
+
+		}
+
+}
